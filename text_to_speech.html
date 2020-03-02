@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>speak text to speech with Resvonsive Voice</title>
+<script src='https://code.responsivevoice.org/responsivevoice.js?key=PvVV0GQ0'></script>
+<script type="text/javascript">
+language={
+English:["UK English Female","UK English Male","US English Female","US English Male"],
+Arabic:"Arabic Male",
+Armenia:"Armenian Male",
+Australia:["Australian Female","Australian Female"],
+Brazil:"Brazilian Portuguese Female",
+China:"Chinese Female",
+Czech:"Czech Female",
+Danish:"Danish Female",
+Deutsch:"Deutsch Female",
+Dutch:"Dutch Female",
+Finish:["Finnish Female","Finish Male"],
+Francis:"French Female",
+Greek: ["Greek Female","Greek Male"],
+Hatian:"Hatian Creole Female",
+Hindi:"Hindi Female",
+Hungarian:["Hungarian Female","Hungarian Male"],
+Indonesia:"Indonesian Female",
+Itali:"Italian Female",
+Japan:"Japanese Female",
+Korea:"Korean Female",
+Latin:["Latin Female","Latin Male"],
+Norwegian:["Norwegian Female","Norwegian Male"],
+Polish:"Polish Female",
+Portugis:"Portuguese Female",
+Roma:"Romanian Male",
+Rusia:"Russian Female",
+Slovak:["Slovak Female","Slovak Male"],
+Spanyol:["Spanish Female","Spanish Latin American Female"],
+Swedia:["Swedish Female","Swedish Male"],
+Tamil:"Tamil Male",
+Thai:"Thai Female",
+Turki:"Turkish Female",
+Afrika:"Afrikaans Male",
+Albanian:"Albanian Male",
+Bosnian:"Bosnian Male",
+Catalan:"Catalan Male",
+Croatian:"Croatian Male",
+Czech:"Czech Male",
+Danish:"Danish Male",
+Esperanto:"Esperanto Male",
+Icelandia:"Icelandic Male",
+Latvian:"Latvian Male",
+Marcedonia:"Macedonian Male",
+Moldavian:"Moldavian Male",
+Montenegrin:"Montenegrin Male",
+Serbian:"Serbian Male",
+Serbo:"Serbo-Croatian Male",
+Swali:"Swahili Male",
+Vietnam:"Vietnamese Male",
+Welsh:"Welsh Male",
+Fallback:"Fallback UK Female",
+}
+function play (){
+responsiveVoice.speak(
+"dede alin suka cilok baraya",
+language.Korea,
+{
+pitch: 1,
+rate: 1,
+volume: 1
+}
+);
+}
+
+function stop (){
+responsiveVoice.cancel();
+a.style.boxShadow="0px 0px 1px blue"
+}
+
+function pause (){
+responsiveVoice.pause();
+a.style.boxShadow="0px 0px 1px blue"
+}
+
+function resume (){
+responsiveVoice.resume();
+a.style.boxShadow="0px 0px 1px blue"
+}
+function robot (){
+a.style.boxShadow="0px 0px 1px blue"
+responsiveVoice.setTextReplacements([{
+    searchvalue: "human",
+    newvalue: "robot"
+}]);
+}
+</script>
+<style> 
+#a{
+    border:2px solid Green;
+    width:70px;
+    height:50px;
+    box-shadow:10px 10px 2px blue;
+    border-radius:20% 20%;
+}
+</style>
+</head>
+<body>
+<button id="a" onclick="play();">Play</button>
+<button id="a" onclick="stop();">Stop</button>
+<button id="a" onclick="pause();">Pause</button>
+<button id="a" onclick="resume();">Resume</button>
+<button id="a" onclick="robot();">Robot </button>
+</body>
+</html>
