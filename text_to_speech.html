@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset='utf-8'>
-<meta name='viewport' content='width=device-width,initial-scale=1.0'>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>speak text to speech with Resvonsive Voice</title>
 <script src='https://code.responsivevoice.org/responsivevoice.js?key=PvVV0GQ0'></script>
 <script type="text/javascript">
@@ -61,12 +61,12 @@ Fallback:"Fallback UK Female",
 }
 function play (){
 responsiveVoice.speak(
-"dede alin suka cilok baraya",
-language.Korea,
+document.getElementById('coba').value,
+document.getElementById('listLanguage').value,
 {
-pitch: 1,
-rate: 1,
-volume: 1
+pitch: document.getElementById('pitch').value,
+rate: document.getElementById('rate').value,
+volume: document.getElementById('volume').value
 }
 );
 }
@@ -85,22 +85,66 @@ function resume (){
 responsiveVoice.resume();
 a.style.boxShadow="0px 0px 1px blue"
 }
-
+function robot (){
+   haha= responsiveVoice.getVoices()
+}
 </script>
+<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch&display=swap" rel="stylesheet">
 <style> 
+body{
+   font-family: 'Cabin Sketch', cursive;
+   background:black;
+}
 #a{
     border:2px solid Green;
     width:70px;
     height:50px;
     box-shadow:10px 10px 2px blue;
     border-radius:20% 20%;
+    font-family: 'Cabin Sketch', cursive;
+}
+body:hover{
+    background:orange;
+}
+#a:hover{
+    width:65px;
+    height:45px;
+}
+div{
+   width:100%
+   border:1px solid blue;   
+   background:black;
+   padding:20px;
+   color:green;
+
 }
 </style>
 </head>
 <body>
+<div align="center">
+<h1 align="center" style="color:blue;">Text To Speech🇮🇩</h1>
+<textarea id="coba" placeholder="tulis disini"></textarea><br>
+<input id="listLanguage" type="list" list="list" placeholder="select language"/>
+<datalist id="list">
+<option>Indonesian Female</option>
+<option>Indonesian Male</option>
+</datalist><br>
+</div>
+<div align="center">
+<label>rate</label> <br>
+<input type="range" id="rate" min="0.5" max="2" value="1" step="0.1">
+<br>
+<label>pitch</label><br>
+<input type="range" id="pitch" min="0" max="2" value="1" step="0.1"><br>
+<label>volume</label><br>
+<input type="range" id="volume" min="0" max="1" value="1" step="0.1">
+<br>
+</div>
+<div align="center" >
 <button id="a" onclick="play();">Play</button>
 <button id="a" onclick="stop();">Stop</button>
 <button id="a" onclick="pause();">Pause</button>
 <button id="a" onclick="resume();">Resume</button>
+</div>
 </body>
 </html>
