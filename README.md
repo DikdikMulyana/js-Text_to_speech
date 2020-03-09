@@ -6,8 +6,8 @@
 ```
 <details>
 <summary>Author</summary>
-<code style='white-space:nowrap;><pre>
-nama:		Dikdik Mulyana
+<code style='white-space:nowrap;'><pre>
+nama:		Dikdik Mulyana 🇮🇩
 telegram:	@Mrdik
 </pre>
 </code>
